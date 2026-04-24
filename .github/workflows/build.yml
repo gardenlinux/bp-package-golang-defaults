@@ -1,0 +1,8 @@
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    uses: gardenlinux/package-build/.github/workflows/build.yml@main
+    with:
+      release: ${{ github.ref == 'refs/heads/main' }}
